@@ -10,7 +10,7 @@ export async function getRecommendedUser(req,res){
 
     // here we want all users except our friends and self
     // also i tried to add recommendation as same native & learning lang or our learning lang to their native lang
-
+    
     try{
         let recommendedUsers = await User.find({
         $and :[
@@ -82,7 +82,6 @@ export async function sendFriendRequest(req,res){
 
         }
         
-
         // check if friend request already exist
         const existingRequest = await FriendRequest.findOne({
             $or : [

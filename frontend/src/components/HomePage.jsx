@@ -107,7 +107,7 @@ const HomePage = () => {
     <h1 className='text-sm opacity-80'>Discover perfect language exchange partners based on your profile</h1>
 
 
-    <div className='flex flex-wrap max-h-[90vh] overflow-auto gap-5 mt-5 '>
+    <div className='flex flex-wrap max-h-[70vh] overflow-auto gap-5 mt-5 '>
       { recommendedUsers.length == 0 ? 
           <div className='bg-base-200 w-full py-5 flex-col justify-items-center rounded-lg'>
         <h3 className='text-md'>No Recommendations Availiable</h3>

@@ -8,7 +8,8 @@ export const getAuthUser = async  () =>{
       // using axios instead
       try{
          const response = await axiosInstance.get("/auth/me")
-        return response.data; //this res.data will be saved inside authData
+         return response.data; //this res.data will be saved inside authData
+         
       }
       catch(err){
         console.log("error",err);
@@ -38,5 +39,10 @@ export const loginApi = async (loginData)=>{
 }
 export const logoutApi = async ()=>{
       const response = await axiosInstance.post("/auth/logout")
+      return response.data
+}
+
+export const agentApi = async(userInput)=>{
+      const response = await axiosInstance.post("/agent/",userInput)
       return response.data
 }

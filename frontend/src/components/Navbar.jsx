@@ -59,8 +59,9 @@ function Navbar(/*{changeTheme,theme}*/) {
                 <Link to="/notifications"><Bell className='size-5'/></Link>
                 <button onClick={()=>{setThemeView(!themeView)}}><Palette className='size-5'/></button> 
                 
-                <img className='size-7 rounded-full' src={authUser.profilePic} alt="Avatar" />
+                <Link to="/profile" ><img className='size-7 rounded-full' src={authUser.profilePic} alt="Avatar" /></Link>
                 <button onClick={handleLogout}><LogOut  className='size-5' /></button>
+                
             </div>
             <ThemeSelector display={themeView}/* changeTheme={(newTheme)=>changeTheme(newTheme)} theme={theme}*/ />
        </div>

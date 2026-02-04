@@ -11,6 +11,7 @@ import userRoutes from './routes/user.route.js';
 import chatRoutes from './routes/chat.route.js';
 
 import { connectDB } from './lib/db.js';
+import agentRoutes from './routes/agentRoutes.js';
 const PORT = process.env.PORT;  // Use PORT from environment variables
 
 const __dirname = path.resolve();
@@ -28,6 +29,7 @@ app.use(express.json()); // Middleware to parse JSON bodies
 app.use("/api/auth",authRoutes); // Use the auth routes under the /api/auth path
 app.use('/api/user',userRoutes);
 app.use('/api/chat',chatRoutes);
+app.use('/api/agent',agentRoutes);
 
 // this means when in the production stage we will serve when above routes are called and if other then these any than our frontend routes will serve
 if(process.env.NODE_ENV === "production"){

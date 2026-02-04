@@ -1,4 +1,4 @@
-import { Bell, Dot, Earth, House, Languages, Users } from 'lucide-react'
+import { Bell, Dot, Earth, Frown, House, Languages, Users } from 'lucide-react'
 import React from 'react'
 import { Link, useLocation } from 'react-router'
 import { useAuthUser } from '../hooks/useAuthUser'
@@ -32,9 +32,12 @@ function Sidebar() {
             <Link className={`w-full ${url=="/notifications" ? "bg-secondary bg-opacity-60" : "bg-base-100" }  px-3 py-1 rounded-full text-md pt-1 `}
                  to="/notifications" ><Bell className='inline size-5'/> Notifications
             </Link>
+            <Link className={`w-full ${url=="/Lango-agent" ? "bg-secondary bg-opacity-60" : "bg-base-100" }  px-3 py-1 rounded-full text-md pt-1 `}
+                 to="/Lango-agent" > Lango Agent 
+            </Link>
         
         </div>
-        <div className='flex absolute bottom-5  items-center  '>
+        <Link to="/profile" className='flex absolute bottom-5  items-center  '>
             <div>
                 <img className='size-8 rounded-full bg-slate-200' src={authUser.profilePic} alt="" />
             </div>
@@ -48,7 +51,7 @@ function Sidebar() {
             </div>
            
             
-        </div>
+        </Link>
     </div>
   )
 }

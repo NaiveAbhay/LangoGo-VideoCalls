@@ -7,6 +7,7 @@ import ChatPage from './components/ChatPage.jsx'
 import CallPage from './components/CallPage.jsx'
 import NotificationsPage from './components/NotificationsPage.jsx'
 import OnboardingPage from './components/OnboardingPage.jsx'
+import LangoAgentPage from './components/LangoAgentPage.jsx'
 import  { Toaster } from 'react-hot-toast'
 
 import { Navigate } from 'react-router'
@@ -17,7 +18,8 @@ import Layout from './components/Layout.jsx'
 import { useState } from 'react'
 import {  useDataTheme } from './hooks/useDataTheme.jsx'
 import FriendsPage from './components/FriendsPage.jsx'
-
+import ProfilePage from './components/ProfilePage.jsx'
+import EditProfilePage from './components/EditProfilePage.jsx'
 
 
 
@@ -78,8 +80,10 @@ const App = () => {
 
         <Route path="/friends" element={(isAuthenticated && isOnboarded )? <Layout showSidebar={true}><FriendsPage/> </Layout>: ( isAuthenticated ? <OnboardingPage/> : <Navigate to="/login"/> )}></Route>
 
-
+        <Route path="/profile"  element={(isAuthenticated && isOnboarded ) ? <Layout showSidebar={true}><ProfilePage/> </Layout> : ( isAuthenticated ? <OnboardingPage/> : <Navigate to="/login"/> )}></Route>
+        <Route path="/editProfile"  element={(isAuthenticated && isOnboarded ) ? <Layout showSidebar={true}><EditProfilePage/> </Layout> : ( isAuthenticated ? <OnboardingPage/> : <Navigate to="/login"/> )}></Route>
         
+        <Route path="/Lango-agent" element={(isAuthenticated && isOnboarded) ? <Layout showSidebar={true}><LangoAgentPage/></Layout> : (isAuthenticated ? <OnboardingPage/>: <Navigate to="/login"/> )} ></Route>
       </Routes>
 
       <Toaster/>

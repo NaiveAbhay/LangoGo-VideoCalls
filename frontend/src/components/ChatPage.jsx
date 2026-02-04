@@ -36,7 +36,6 @@ const ChatPage = () => {
     const initChat = async ()=>{
       if(!tokenData?.token || !authUser) return null;
       
-
       try{
         console.log("Initialising stream chat client");
 
@@ -104,7 +103,7 @@ const ChatPage = () => {
       </Chat>
       
     </div>
-  )
+  );
 }
 
 export default ChatPage
